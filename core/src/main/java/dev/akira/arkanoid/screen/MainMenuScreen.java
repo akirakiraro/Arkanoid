@@ -78,7 +78,10 @@ public class MainMenuScreen implements Screen {
 
     @Override public void pause() {}
     @Override public void resume() {}
-    @Override public void hide() {}
+    @Override public void hide() {
+    	stage.dispose();
+    	skin.dispose();
+    }
     @Override public void dispose() {
         stage.dispose();
         skin.dispose();

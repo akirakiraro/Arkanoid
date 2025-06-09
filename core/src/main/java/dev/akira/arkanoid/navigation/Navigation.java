@@ -3,6 +3,7 @@ package dev.akira.arkanoid.navigation;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 
+import dev.akira.arkanoid.screen.GameScreen;
 import dev.akira.arkanoid.screen.MainMenuScreen;
 
 public class Navigation {
@@ -17,7 +18,7 @@ public class Navigation {
 	}
 	
 	public void goToGame() {
-		game.setScreen(new MainMenuScreen(this));
+		game.setScreen(new GameScreen(this));
 	}
 	
 	public void setScreen(Screen screen) {
