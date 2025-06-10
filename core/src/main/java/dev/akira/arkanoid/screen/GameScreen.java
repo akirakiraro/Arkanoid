@@ -10,19 +10,10 @@ import dev.akira.arkanoid.world.Renderer;
 import dev.akira.arkanoid.world.World;
 
 public class GameScreen implements Screen {
-	// controller
 	private GameController controller;
-	
-	// Input
 	private InputManager inputManager;
-	
-	// Navigation
 	private Navigation nav;
-	
-	// World
 	private World world;
-	
-	// Renderer
 	private Renderer renderer;
 	
 	// Construtor

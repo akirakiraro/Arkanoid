@@ -36,6 +36,10 @@ public class Player {
     	this.direction = direction;
     }
 
+    public Rectangle getBounds() {
+    	return new Rectangle(bar.x, bar.y, bar.width, bar.height);
+    }
+    
     public float getX() {return bar.x;}
     public float getY() {return bar.y;}
     public float getWidth() {return bar.width;}
