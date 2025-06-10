@@ -8,8 +8,8 @@ public class InputManager {
 	private boolean moveRight;
 	
 	public void update() {
-        moveLeft = Gdx.input.isKeyPressed(Input.Keys.A);
-        moveRight = Gdx.input.isKeyPressed(Input.Keys.D);
+        moveLeft = Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.isKeyPressed(Input.Keys.LEFT);
+        moveRight = Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.isKeyPressed(Input.Keys.RIGHT);
     }
 
     public boolean isMovingLeft() {

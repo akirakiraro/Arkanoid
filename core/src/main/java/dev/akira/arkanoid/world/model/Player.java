@@ -5,7 +5,7 @@ import com.badlogic.gdx.math.Rectangle;
 
 public class Player {
 	private Rectangle bar;
-	private float movespeed = 300f;
+	private float movespeed = 500f;
 	private int direction;
 	
 	/**
