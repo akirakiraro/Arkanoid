@@ -1,7 +1,8 @@
 package dev.akira.arkanoid.world.model;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Circle;
+
+import dev.akira.arkanoid.config.GameConfig;
 
 public class Ball {
 	private Circle ball;
@@ -14,16 +15,16 @@ public class Ball {
 	}
 	
 	public void update(float delta) {
-		if (ball.x > Gdx.graphics.getWidth()) {
+		if (ball.x + ball.radius > GameConfig.getInstancia().getX2()) {
 			dX = -1;
 		}
-		if (ball.x < 0) {
+		if (ball.x - ball.radius< GameConfig.getInstancia().getX1()) {
 			dX = 1;
 		}
-		if (ball.y > Gdx.graphics.getHeight()) {
+		if (ball.y + ball.radius > GameConfig.getInstancia().getY2()) {
 			dY = -1;
 		}
-		if (ball.y < 0) {
+		if (ball.y - ball.radius < GameConfig.getInstancia().getY1()) {
 			dY = 1;
 		}
 		
@@ -33,6 +34,14 @@ public class Ball {
 	
 	public void playerCollision() {
 		dY = 1;
+	}
+	public void blockCollision(int directionX, int directionY) {
+		if (directionX != 0) {
+			dX = directionX;
+		}
+		if (directionY != 0) {
+			dY = directionY;
+		}
 	}
 	
 	public Circle getBounds() {

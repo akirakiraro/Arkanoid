@@ -2,14 +2,8 @@
 World/OrangeBlock.png
 World/Player/paddle.png
 World/ball_red.png
-background/Starfield_02-1024x1024.png
-background/Starfield_03-1024x1024.png
-background/Starfield_04-1024x1024.png
-background/Starfield_05-1024x1024.png
-background/Starfield_06-1024x1024.png
-background/Starfield_07-1024x1024.png
-background/Starfield_08-1024x1024.png
 background/backgroud_game.png
+background/telaGame.png
 skin/large-sans-serif.fnt
 skin/large-sans-serif.png
 skin/uiskin.atlas

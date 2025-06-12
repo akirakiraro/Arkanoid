@@ -1,7 +1,7 @@
 package dev.akira.arkanoid.world.model;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
+import dev.akira.arkanoid.config.GameConfig;
 
 public class Player {
 	private Rectangle bar;
@@ -24,11 +24,11 @@ public class Player {
     	bar.x += direction * movespeed * delta;
 
         // Impede que o jogador saia da tela
-        if (bar.x < 0) {
-        	bar.x = 0;
+        if (bar.x < GameConfig.getInstancia().getX1()) {
+        	bar.x = GameConfig.getInstancia().getX1();
         }
-        if (bar.x + bar.width > Gdx.graphics.getWidth()) {
-        	bar.x = Gdx.graphics.getWidth() - bar.width;
+        if (bar.x + bar.width > GameConfig.getInstancia().getX2()) {
+        	bar.x = GameConfig.getInstancia().getX2() - bar.width;
         }
     }
 	
