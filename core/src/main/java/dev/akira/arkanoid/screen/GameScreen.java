@@ -8,6 +8,7 @@ import dev.akira.arkanoid.inputmanager.InputManager;
 import dev.akira.arkanoid.navigation.Navigation;
 import dev.akira.arkanoid.world.Renderer;
 import dev.akira.arkanoid.world.World;
+import dev.akira.arkanoid.world.stage.GameHUD;
 
 public class GameScreen implements Screen {
 	private GameController controller;
@@ -15,6 +16,7 @@ public class GameScreen implements Screen {
 	private Navigation nav;
 	private World world;
 	private Renderer renderer;
+	private GameHUD gameHUD;
 	
 	// Construtor
 	public GameScreen(Navigation nav) {
@@ -26,17 +28,19 @@ public class GameScreen implements Screen {
 		
 		inputManager = new InputManager();
 		world = new World();
-		controller = new GameController(nav, world.getPlayer(), inputManager);
+		controller = new GameController(nav, world, inputManager);
 		renderer = new Renderer(world);
+		gameHUD = new GameHUD(controller);
 	}
 
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		inputManager.update();
-		controller.update(delta);
 		world.update(delta);
+		controller.update(delta);
 		renderer.render();
+		gameHUD.render(delta);
 	}
 
 	@Override
@@ -52,6 +56,7 @@ public class GameScreen implements Screen {
 	@Override
 	public void dispose() {
 		renderer.dispose();
+		gameHUD.dispose();
 	}
 
 }

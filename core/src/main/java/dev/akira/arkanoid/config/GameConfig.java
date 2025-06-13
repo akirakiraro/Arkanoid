@@ -8,8 +8,10 @@ public class GameConfig {
 	// Tela
 	private float x1, x2, y1, y2;
 	private float width, height;
-	
 	private float offsetX, offsetY;
+	
+	// Velocidade da bola base
+	private float ballMovespeed;
 	
 	private GameConfig() {
 		this.width = 600;
@@ -20,6 +22,8 @@ public class GameConfig {
 		this.y1 = (Gdx.graphics.getHeight() / 2) - (height / 2) + offsetY;
 		this.x2 = (Gdx.graphics.getWidth() / 2) + (width / 2) + offsetX;
 		this.y2 = (Gdx.graphics.getHeight() / 2) + (height / 2) + offsetY;
+		// Ball
+		this.ballMovespeed = 300;
 	}
 	
 	public static GameConfig getInstancia() {
@@ -35,6 +39,8 @@ public class GameConfig {
 	public float getY2() { return y2;}
 	public float getWidth() { return width;}
 	public float getHeight() { return height;}
-	public float getMiddleX() { return (x2 - x1) / 2; }
+	public float getMiddleX() { return (x2 - x1) / 2;}
+	// ball
+	public float getBallMovespeed() { return ballMovespeed;}
 	
 }

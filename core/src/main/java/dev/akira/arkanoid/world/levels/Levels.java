@@ -1,24 +1,24 @@
-package dev.akira.arkanoid.world.stages;
+package dev.akira.arkanoid.world.levels;
 
 import com.badlogic.gdx.utils.Array;
 
 import dev.akira.arkanoid.config.GameConfig;
 import dev.akira.arkanoid.world.model.Block;
 
-public class Stage {
-	private Array<Block> stage;
+public class Levels {
+	private Array<Block> level;
 	
 	private float blockWidth, blockHeight;
 	private float maxRow, maxCol;
 	private float initialX, initialY;
 	private float x, y;
 	
-	public Stage() {
-		stage = new Array<>();
+	public Levels() {
+		level = new Array<>();
 	}
 	
 	
-	public Array<Block> getStage1(){
+	public Array<Block> getLevel1(){
 		blockWidth = 100;
 		blockHeight = 60;
 		maxRow = 5;
@@ -29,9 +29,9 @@ public class Stage {
 			for (float col = 0; col < maxCol; col++) {
 				x = initialX + (col * blockWidth);
 				y = initialY + (row * blockHeight);
-				stage.add(new Block(x, y,blockWidth,blockHeight));
+				level.add(new Block(x, y,blockWidth,blockHeight));
 			}
 		}
-		return stage;
+		return level;
 	}
 }
