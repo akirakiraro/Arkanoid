@@ -19,15 +19,34 @@ public class Levels {
 	
 	
 	public Array<Block> getLevel1(){
+		level.clear();
 		blockWidth = 100;
 		blockHeight = 60;
-		maxRow = 5;
-		maxCol = 6;
+		maxRow = 1;
+		maxCol = 1;
 		initialX = GameConfig.getInstancia().getX1();
 		initialY = GameConfig.getInstancia().getY1() + 400;
 		for (float row = 0; row < maxRow; row++) {
 			for (float col = 0; col < maxCol; col++) {
 				x = initialX + (col * blockWidth);
+				y = initialY + (row * blockHeight);
+				level.add(new Block(x, y,blockWidth,blockHeight));
+			}
+		}
+		return level;
+	}
+	
+	public Array<Block> getLevel2(){
+		level.clear();
+		blockWidth = 100;
+		blockHeight = 60;
+		maxRow = 5;
+		maxCol = 3;
+		initialX = GameConfig.getInstancia().getX1();
+		initialY = GameConfig.getInstancia().getY1() + 400;
+		for (float row = 0; row < maxRow; row++) {
+			for (float col = 0; col < maxCol; col++) {
+				x = initialX + (col * blockWidth * 2);
 				y = initialY + (row * blockHeight);
 				level.add(new Block(x, y,blockWidth,blockHeight));
 			}

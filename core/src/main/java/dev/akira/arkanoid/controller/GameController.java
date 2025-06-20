@@ -21,12 +21,18 @@ public class GameController implements ScreenController{
     
     public void update(float delta) {
     	player.setDirection(0);
+    	
+    	if (input.startGame()) {
+    		world.getBall().startBall();
+    	}
     	if (input.isMovingLeft()) {
     		player.setDirection(-1);
     	}
     	if (input.isMovingRight()) {
     		player.setDirection(1);
     	}
+    	
+    	
     }
 
 	@Override
@@ -39,5 +45,7 @@ public class GameController implements ScreenController{
 		}
 		
 	}
+	
+	public int getLife() { return player.getLife().getLife(); }
 
 }

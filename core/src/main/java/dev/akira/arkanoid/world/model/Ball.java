@@ -8,13 +8,19 @@ import dev.akira.arkanoid.config.GameConfig;
 public class Ball {
 	private Circle ball;
 	private Vector2 movespeed;
+	private boolean start;
 	
 	public Ball(float x, float y, float radius) {
 		this.ball = new Circle(x, y, radius);
-		this.movespeed = new Vector2(GameConfig.getInstancia().getBallMovespeed(), GameConfig.getInstancia().getBallMovespeed());
+		this.movespeed = new Vector2(0, GameConfig.getInstancia().getBallMovespeed());
+		this.start = false;
 	}
 	
 	public void update(float delta) {
+		if (!start) {
+			return;
+		}
+		
 		// bate na parede da direita
 		if (ball.x + ball.radius > GameConfig.getInstancia().getX2() &&
 			movespeed.x > 0) {
@@ -40,6 +46,11 @@ public class Ball {
 		ball.y += movespeed.y * delta;
 	}
 	
+	public void startBallMove(float playerX) {
+		ball.y = 130;
+		ball.x = playerX;
+	}
+	
 	public void playerCollision(float angle) {
 		movespeed.setAngleDeg(angle);
 	}
@@ -59,10 +70,14 @@ public class Ball {
 		movespeed.y *= -1;
 	}
 	
-	public Circle getBounds() {
-		return new Circle(ball.x, ball.y, ball.radius);
+	public void resetBall() {
+		start = false;
+		movespeed = new Vector2(0, GameConfig.getInstancia().getBallMovespeed());
 	}
 	
+	public Circle getBounds() { return new Circle(ball.x, ball.y, ball.radius); }
+	public boolean getStart() { return start; }
+	public void startBall() { this.start = true; }
 	public float getDirectionX() { return movespeed.x; }
 	public float getDirectionY() { return movespeed.y; }
 	public float getX() { return ball.x;}

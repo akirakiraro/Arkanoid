@@ -15,6 +15,10 @@ public class Score {
 		return instancia;
 	}
 	
+	public void resetScore() {
+		score = 0;
+	}
+	
 	public void addScore() {
 		score += 100;
 	}

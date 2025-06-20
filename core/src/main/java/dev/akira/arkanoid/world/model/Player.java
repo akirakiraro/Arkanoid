@@ -1,10 +1,12 @@
 package dev.akira.arkanoid.world.model;
 
 import com.badlogic.gdx.math.Rectangle;
+
 import dev.akira.arkanoid.config.GameConfig;
 
 public class Player {
 	private Rectangle bar;
+	private Life life;
 	private float movespeed = 500f;
 	private int direction;
 	
@@ -17,6 +19,7 @@ public class Player {
 	 */
 	public Player(float x, float y, float width, float height) {
 		bar = new Rectangle(x, y, width, height);
+		life = new Life();
 	}
 	
     public void update(float delta) {
@@ -44,4 +47,6 @@ public class Player {
     public float getY() {return bar.y;}
     public float getWidth() {return bar.width;}
     public float getHeight() {return bar.height;}
+    public float getMiddleX() {return bar.x + bar.width / 2;}
+    public Life getLife() {return life;}
 }

@@ -23,7 +23,7 @@ public class GameConfig {
 		this.x2 = (Gdx.graphics.getWidth() / 2) + (width / 2) + offsetX;
 		this.y2 = (Gdx.graphics.getHeight() / 2) + (height / 2) + offsetY;
 		// Ball
-		this.ballMovespeed = 300;
+		this.ballMovespeed = 400;
 	}
 	
 	public static GameConfig getInstancia() {
