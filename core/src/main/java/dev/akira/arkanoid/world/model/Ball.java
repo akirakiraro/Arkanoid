@@ -9,11 +9,13 @@ public class Ball {
 	private Circle ball;
 	private Vector2 movespeed;
 	private boolean start;
+	private float dificult;
 	
 	public Ball(float x, float y, float radius) {
 		this.ball = new Circle(x, y, radius);
 		this.movespeed = new Vector2(0, GameConfig.getInstancia().getBallMovespeed());
 		this.start = false;
+		this.dificult = 1;
 	}
 	
 	public void update(float delta) {
@@ -42,8 +44,8 @@ public class Ball {
 			reverseY();
 		}
 		
-		ball.x += movespeed.x * delta;
-		ball.y += movespeed.y * delta;
+		ball.x += movespeed.x * delta * dificult;
+		ball.y += movespeed.y * delta * dificult;
 	}
 	
 	public void startBallMove(float playerX) {

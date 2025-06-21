@@ -22,8 +22,8 @@ public class Levels {
 		level.clear();
 		blockWidth = 100;
 		blockHeight = 60;
-		maxRow = 1;
-		maxCol = 1;
+		maxRow = 1; // 5
+		maxCol = 1; // 6
 		initialX = GameConfig.getInstancia().getX1();
 		initialY = GameConfig.getInstancia().getY1() + 400;
 		for (float row = 0; row < maxRow; row++) {
@@ -40,14 +40,32 @@ public class Levels {
 		level.clear();
 		blockWidth = 100;
 		blockHeight = 60;
-		maxRow = 5;
-		maxCol = 3;
+		maxRow = 2; // 5
+		maxCol = 1; // 3
 		initialX = GameConfig.getInstancia().getX1();
 		initialY = GameConfig.getInstancia().getY1() + 400;
 		for (float row = 0; row < maxRow; row++) {
 			for (float col = 0; col < maxCol; col++) {
 				x = initialX + (col * blockWidth * 2);
 				y = initialY + (row * blockHeight);
+				level.add(new Block(x, y,blockWidth,blockHeight));
+			}
+		}
+		return level;
+	}
+	
+	public Array<Block> getLevel3(){
+		level.clear();
+		blockWidth = 100;
+		blockHeight = 60;
+		maxRow = 1;
+		maxCol = 2;
+		initialX = GameConfig.getInstancia().getX1();
+		initialY = GameConfig.getInstancia().getY1() + 380;
+		for (float row = 0; row < maxRow; row++) {
+			for (float col = 0; col < maxCol; col++) {
+				x = initialX + (col * blockWidth);
+				y = initialY + (row * blockHeight * 2);
 				level.add(new Block(x, y,blockWidth,blockHeight));
 			}
 		}

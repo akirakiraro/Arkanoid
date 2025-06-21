@@ -19,15 +19,19 @@ public class World {
 		level = new LevelManager();
 		player = new Player(GameConfig.getInstancia().getMiddleX(), 100, 100, 20);
 		ball = new Ball(GameConfig.getInstancia().getMiddleX(), 130, 10);
-		blocks = new Array<Block>(level.getCurrentLevel());
+		blocks = new Array<>();
 		Score.getInstancia().resetScore();
 	}
 
 	public void update(float delta) {
 		if(blocks.isEmpty()) {
-			level.nextLevel();
+			blocks.addAll(level.level());
 			ball.resetBall();
-			blocks.addAll(level.getCurrentLevel());
+			level.nextLevel();
+			
+			if (level.getCurrentLevel() == level.getMaxLevel()) {
+				level.resetCurrentLevel();
+			}
 		}
 		player.update(delta);
 		ball.update(delta);

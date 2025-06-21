@@ -5,11 +5,12 @@ import dev.akira.arkanoid.world.model.Block;
 
 public class LevelManager {
 	private Levels level;
-	private int currentLevel = 1;
-	private int maxLevel = 2;
+	private int currentLevel;
+	private int maxLevel = 3;
 
 	public LevelManager() {
 		this.level = new Levels();
+		this.currentLevel = 1;
 	}
 	
 	public void nextLevel() {
@@ -22,13 +23,18 @@ public class LevelManager {
 		currentLevel = 1;
 	}
 	
-	public Array<Block> getCurrentLevel() {
+	public Array<Block> level() {
 		switch (currentLevel) {
 			case 1:
 				return level.getLevel1();
 			case 2:
 				return level.getLevel2();
+			case 3:
+				return level.getLevel3();
 		}
 		return level.getLevel1();
 	}
+	
+	public int getMaxLevel() { return maxLevel; }
+	public int getCurrentLevel() { return currentLevel; }
 }
