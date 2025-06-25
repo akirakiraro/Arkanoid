@@ -22,6 +22,11 @@ public class GameController implements ScreenController{
     public void update(float delta) {
     	player.setDirection(0);
     	
+    	if (!player.getLife().isLive()) {
+    		nav.goToGameOver();
+    		return;
+    	}
+    	
     	if (input.startGame()) {
     		world.getBall().startBall();
     	}

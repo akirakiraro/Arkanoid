@@ -28,10 +28,6 @@ public class World {
 			blocks.addAll(level.level());
 			ball.resetBall();
 			level.nextLevel();
-			
-			if (level.getCurrentLevel() == level.getMaxLevel()) {
-				level.resetCurrentLevel();
-			}
 		}
 		player.update(delta);
 		ball.update(delta);

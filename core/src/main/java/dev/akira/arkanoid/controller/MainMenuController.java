@@ -7,7 +7,7 @@ public class MainMenuController implements ScreenController{
 	private final Navigation nav;
 
     public MainMenuController(Navigation nav) {
-        this.nav = nav;
+        this.nav = nav; 
     }
     
 	@Override

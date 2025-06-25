@@ -4,6 +4,7 @@ import com.badlogic.gdx.utils.Array;
 import dev.akira.arkanoid.world.model.Block;
 
 public class LevelManager {
+	private int stage = 0;
 	private Levels level;
 	private int currentLevel;
 	private int maxLevel = 3;
@@ -16,6 +17,12 @@ public class LevelManager {
 	public void nextLevel() {
 		if (currentLevel < maxLevel) {
 			currentLevel++;
+			return;
+		}
+		if (currentLevel == maxLevel) {
+			stage++;
+			resetCurrentLevel();
+			return;
 		}
 	}
 	
@@ -37,4 +44,5 @@ public class LevelManager {
 	
 	public int getMaxLevel() { return maxLevel; }
 	public int getCurrentLevel() { return currentLevel; }
+	public int getStage() { return stage; }
 }
