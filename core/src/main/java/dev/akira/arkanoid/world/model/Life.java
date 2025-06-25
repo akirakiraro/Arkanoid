@@ -6,7 +6,7 @@ public class Life {
 	private boolean isLive;
 	
 	public Life() {
-		this.maxLives = 3;
+		this.maxLives = 1;
 		this.lives = maxLives;
 		this.isLive = true;
 	}
