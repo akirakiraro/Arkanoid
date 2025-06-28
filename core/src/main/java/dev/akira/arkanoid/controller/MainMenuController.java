@@ -6,7 +6,7 @@ import dev.akira.arkanoid.navigation.Navigation;
 public class MainMenuController implements ScreenController{
 	private final Navigation nav;
 
-    public MainMenuController(Navigation nav) {
+    public MainMenuController(Navigation nav) { 
         this.nav = nav; 
     }
     

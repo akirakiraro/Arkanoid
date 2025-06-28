@@ -22,8 +22,8 @@ public class Levels {
 		level.clear();
 		blockWidth = 100;
 		blockHeight = 60;
-		maxRow = 1; // 5
-		maxCol = 1; // 6
+		maxRow = 5; // 5
+		maxCol = 6; // 6
 		initialX = GameConfig.getInstancia().getX1();
 		initialY = GameConfig.getInstancia().getY1() + 400;
 		for (float row = 0; row < maxRow; row++) {
@@ -40,8 +40,8 @@ public class Levels {
 		level.clear();
 		blockWidth = 100;
 		blockHeight = 60;
-		maxRow = 2; // 5
-		maxCol = 1; // 3
+		maxRow = 7; // 7
+		maxCol = 3; // 3
 		initialX = GameConfig.getInstancia().getX1();
 		initialY = GameConfig.getInstancia().getY1() + 400;
 		for (float row = 0; row < maxRow; row++) {
@@ -58,8 +58,8 @@ public class Levels {
 		level.clear();
 		blockWidth = 100;
 		blockHeight = 60;
-		maxRow = 1;
-		maxCol = 2;
+		maxRow = 4; // 4
+		maxCol = 6; // 6
 		initialX = GameConfig.getInstancia().getX1();
 		initialY = GameConfig.getInstancia().getY1() + 380;
 		for (float row = 0; row < maxRow; row++) {

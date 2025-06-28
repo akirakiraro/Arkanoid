@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import dev.akira.arkanoid.controller.GameOverController;
 import dev.akira.arkanoid.navigation.Navigation;
+import dev.akira.arkanoid.world.model.Score;
 
 public class GameOverScreen implements Screen{
 	private GameOverController controller;
@@ -32,18 +33,22 @@ public class GameOverScreen implements Screen{
         skinTitle = new Skin(Gdx.files.internal("skinTitle/uiskin.json"));
 		
         Table table = new Table();
+        Table tablePlacing = new Table();
         Table tableButtons = new Table();
         table.setFillParent(true);
         table.top();
         stage.addActor(table);
         
         Label title = new Label("Game Over", skinTitle);
-        Label sss1 = new Label("case 1", skin);
+        Label sss1 = new Label("Points: " + Score.getInstancia().getScore(), skin);
         TextButton submitButton = new TextButton("Enviar", skin);
         TextButton backButton = new TextButton("Voltar", skin);
-        
+
         table.add(title).top().pad(10).row();
         table.add(sss1).top().pad(30).row();
+
+        tablePlacing.add();
+        table.add(tablePlacing).top();
         
         tableButtons.add(submitButton).top().pad(30);
         tableButtons.add(backButton).top().pad(30).row();
